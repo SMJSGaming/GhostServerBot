@@ -4,8 +4,6 @@
     "module": "CommonJS",
     "target": "ES2020",
     "strict": true,
-    "sourceMap": true,
-    "declaration": true,
     "removeComments": true,
     "esModuleInterop": true,
     "noImplicitAny": true,

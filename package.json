@@ -13,5 +13,8 @@
   "dependencies": {
     "discord.js": "^14.6.0",
     "dotenv": "^16.0.3"
+  },
+  "overrides": {
+    "discord-api-types": "0.37.14"
   }
 }

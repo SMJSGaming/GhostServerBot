@@ -17,7 +17,8 @@ export const CLIENT = new Client({
         GatewayIntentBits.GuildWebhooks,
         GatewayIntentBits.GuildInvites,
         GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.GuildMessageReactions
+        GatewayIntentBits.GuildMessageReactions,
+        GatewayIntentBits.MessageContent
     ]
 });
 
@@ -32,7 +33,7 @@ AsyncArray.from(readdirSync(commandsDir)).asyncForEach(async (command) => {
     DevConsole.info("Registering slash commands");
 
     new REST({
-        version: "9"
+        version: "10"
     }).setToken(process.env.TOKEN!).put(Routes.applicationCommands(process.env.APPLICATION_ID!), {
         body: [...commandMap.values()].map(({ commandBuild }) => commandBuild.toJSON())
     }).then(() => {
